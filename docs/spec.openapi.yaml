@@ -1,1 +1,81 @@
-TODO
+openapi: 3.0.3
+info:
+  title: Rollee API
+
+  license:
+    name: MIT
+  version: TBA
+tags:
+  - name: Words
+paths:
+  /api/word:
+    post:
+      description: Adds a new word to the server
+      tags:
+        - Words
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addWord'
+      responses:
+        '200':
+          description: Word added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/status'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/status'
+  /api/word/{word}:
+    get:
+      description: Queries a word an the times found
+      tags:
+        - Words
+      parameters:
+        - in: path
+          name: word
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Word added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/word'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/status'
+
+components:
+  schemas:
+    status:
+      type: object
+      properties:
+        status:
+          type: boolean
+        error:
+          type: string
+    word:
+      type: object
+      properties:
+        uuid:
+          type: string
+        word:
+          type: string
+        isNull:
+          type: boolean
+    addWord:
+      type: object
+      properties:
+        word:
+          type: string
