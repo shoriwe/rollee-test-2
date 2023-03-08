@@ -93,6 +93,7 @@ jobs:
       - name: GitHub release
         uses: softprops/action-gh-release@v1
         with:
+          token: ${{secrets.PERSONAL_TOKEN}}
           files: |
             bin/${{ github.repository }}
             bin/${{ github.repository }}.exe
