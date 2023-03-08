@@ -1,8 +1,8 @@
 name: Coverage
 
 on:
-  release:
-    types: ["published", "unpublished", "prereleased"]
+  registry_package:
+    types: ["published"]
 
 permissions: read-all
 
