@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2023-03-08)
+
+
+### Bug Fixes
+
+* accidently removed half of the CI when pasting the conditional ([65d07da](https://github.com/shoriwe/rollee-test-2/commit/65d07dad27e078846538d5fae1994e3566b8eefa))
+
 ### 0.0.4 (2023-03-08)
 
 
