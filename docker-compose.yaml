@@ -1,0 +1,37 @@
+# This docker compose will be used by API developers since it
+# only starts the Databases and expose their ports
+
+version: "3.3"
+
+networks:
+  server:
+    external: false
+
+services:
+  server:
+    networks:
+      - server
+    container_name: server-api
+    restart: unless-stopped
+    image: ghcr.io/shoriwe/rollee-test-2:0.0.2
+    ports:
+      - "127.0.0.1:5000:5000"
+    command: [
+      "sh", "-c", "/server", 
+      "--database", 
+      "postgres://host=127.0.0.1 user=sulcud password=sulcud dbname=sulcud port=5432 sslmode=disable",
+      ":5000"
+      ]
+    
+  postgres:
+    networks:
+      - server
+    container_name: server-postgres
+    restart: unless-stopped
+    image: postgres:latest
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_DB: sulcud
+      POSTGRES_USER: sulcud
+      POSTGRES_PASSWORD: sulcud
