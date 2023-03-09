@@ -13,7 +13,7 @@ services:
       - server
     container_name: server-api
     restart: unless-stopped
-    image: ghcr.io/shoriwe/rollee-test-2:0.0.2
+    image: ghcr.io/shoriwe/rollee-test-2:latest
     ports:
       - "127.0.0.1:5000:5000"
     command: [
