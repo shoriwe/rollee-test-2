@@ -16,13 +16,13 @@ services:
     image: ghcr.io/shoriwe/rollee-test-2:latest
     ports:
       - "127.0.0.1:5000:5000"
-    command: [
-      "sh", "-c", "/server", 
-      "--database", 
-      "postgres://host=127.0.0.1 user=sulcud password=sulcud dbname=sulcud port=5432 sslmode=disable",
-      ":5000"
+    entrypoint: /bin/sh
+    command:
+      [
+        "-c",
+        "/server --database 'postgres://host=server-postgres user=sulcud password=sulcud dbname=sulcud port=5432 sslmode=disable' :5000"
       ]
-    
+
   postgres:
     networks:
       - server
