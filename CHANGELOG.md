@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.7 (2023-03-11)
+
+
+### Bug Fixes
+
+* fixed entrypoint for the docker compose ([5dd211d](https://github.com/shoriwe/rollee-test-2/commit/5dd211d6e6037a8df22898bab06ec0d5212b085c))
+
 ### 0.0.6 (2023-03-08)
 
 
